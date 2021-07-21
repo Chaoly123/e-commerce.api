@@ -4,7 +4,7 @@ const { Tag, Product, ProductTag, Category } = require('../../models');
 // The `/api/tags` endpoint
 
 router.get('/', (req, res) => {
-  Product.findAll().then((productData) => {
+  Tag.findAll().then((productData) => {
     res.json(productData);
   });
   // find all tags
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Tag.update(
     [
-      tag_name:req.body.tag,
+      tag_name: req.body.tag,
     ],
     {
       where: {
