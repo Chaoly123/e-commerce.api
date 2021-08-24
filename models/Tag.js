@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../../config/connection.js');
+const sequelize = require('../config/connection');
 
 class Tag extends Model {}
 
@@ -12,13 +12,8 @@ Tag.init(
       primaryKey: true,
       autoIncrement: true
     },
-    product_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    tag_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+    tag_name: {
+      type: DataTypes.STRING
     }
     
     // define columns
